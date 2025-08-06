@@ -1,10 +1,14 @@
-import { Stack, useRouter, useSegments } from "expo-router";
+import { SplashScreen, Stack, useRouter, useSegments } from "expo-router";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import SafeScreen from "./components/SafeScreen";
 import { StatusBar } from "expo-status-bar";
 import { userAuth } from "../store/authstore";
 import { useEffect, useState } from "react";
 
+
+
+
+// SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const router = useRouter();
   const segments = useSegments();

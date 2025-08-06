@@ -60,9 +60,9 @@ export default function Create() {
 
         }
         //
-          const result = await ImagePicker.launchImageLibraryAsync({
+          const result = await ImagePicker.launchCameraAsync({
             mediaTypes: "images",
-            //  mediaTypes: ImagePicker.MediaTypeOptions.All, // images + videos
+          //  mediaTypes: ImagePicker.MediaTypeOptions.All, // images + videos
             allowsEditing: true,
             aspect:[4,3],
             quality: 0.5, // compress image to reduce size

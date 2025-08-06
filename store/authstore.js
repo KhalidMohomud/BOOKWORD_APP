@@ -7,6 +7,7 @@ import AsyncStorage  from '@react-native-async-storage/async-storage'
    user: null,
    token: null,
    isLoading: false,
+   isCheckingAuth: true,
 
    //
    register: async (username,email , password)=>{
@@ -77,6 +78,8 @@ import AsyncStorage  from '@react-native-async-storage/async-storage'
       } catch (error) {
         console.log("auth check faild ",error);
         
+      } finally {
+        set({isCheckingAuth: false});
       }
    },
    logOut: async()=>{

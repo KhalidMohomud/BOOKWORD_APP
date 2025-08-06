@@ -11,6 +11,9 @@ import Loading from '../components/Loading';
 import { useFocusEffect } from 'expo-router';
 
 
+
+
+export const sleep  = (ms) => new Promise((resolve)=> setTimeout(resolve, ms))
 export default function Index() {
     const [books,setBooks] = useState([]);
    const [loading,setLoading] = useState(true);
@@ -18,6 +21,7 @@ export default function Index() {
      const [page,setpage] = useState(1);
      const [hasMore,setHasMore] = useState(1);
      const {token} = userAuth();
+
 
      const fetchBooks = async(pageNum=1, refresh=false  )=>{
       try {
@@ -130,9 +134,11 @@ export default function Index() {
         <View style={styles.bookDetails}>
           <Text style={styles.bookTitle}>{item.title}</Text>
               <View style={styles.ratingContainer}>{renderRatingStart(item.rating)}</View>
-           <Text style={styles.caption}>{item.caption}</Text>
+           <Text style={styles.caption}>{item.captions}</Text>
            <Text style={styles.date}>share on{formatPublishDate(item.createdAt)}</Text>
         </View>
+
+        
 
         </View>
       )

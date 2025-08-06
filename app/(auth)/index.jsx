@@ -13,8 +13,11 @@ const Login = () => {
     const [showPassword ,setShowPassword] = useState(false);
 
     const router =  useRouter()
-      const {User , login , isLoading }=  userAuth();
+      const {User , login , isLoading,isCheckingAuth }=  userAuth();
       // console.log("heye", User);
+
+       //
+      if(isCheckingAuth) return null
 
     const handleLogin = async()=>{
       const result = await login(email, password);
